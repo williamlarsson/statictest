@@ -1,0 +1,113 @@
+html, body{
+    height: 100%;
+    width: 100%;
+}
+body{
+    height: 100%;
+    background: rgba(400,220,220,.8);
+    background: black;
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    justify-content: center;
+
+}
+path{
+    /*fill: black !important;
+    stroke: black !important;*/
+}
+p{
+    color: white;
+    width: 660px;
+    letter-spacing: 0px;
+    font-size: 12px;
+    text-align: justify;
+    clip-path: url(#bird);
+    display: none;
+    /*background: white;*/
+
+}
+#clipme{
+    /*display: none;*/
+    background: radial-gradient(circle at center, black, blue);
+    /*background: radial-gradient(blue, );*/
+    height: 19px;
+    width: 18px;
+    transform: scale(20);
+    position: relative;
+    /*clip-path: url(#mb);*/
+    clip-path: url(#bird);
+    /*border: 1px solid black;*/
+    /*animation: clipRotate 1s linear infinite;*/
+}
+#clipme:before, #clipme:after{
+    background: radial-gradient(circle at center, yellow, black);
+    content: '';
+    height: 100%;
+    width: 100%;
+    display: inline-block;
+    position: absolute;
+    left: 0px;
+    top: 0;
+    animation: fade 4s infinite linear alternate-reverse;
+}
+#clipme:after{
+    background: radial-gradient(circle at center, green, black);
+    animation: fade 2s infinite linear alternate-reverse;
+}
+@keyframes fade{ 
+    0%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
+}
+@keyframes bgRotate{
+    0% {
+        background: radial-gradient(circle at left, red, blue);
+    }
+    50%{
+        background: radial-gradient(circle at center, blue, red);
+    }
+    100% {
+        background: radial-gradient(circle at center, blue, red);
+    }
+}
+
+@keyframes clipRotate{
+    0%{
+        clip-path: circle(20% at 50% 30%);
+    }
+    5%{
+        clip-path: circle(20% at 50% 32%);
+    }
+    10%{
+        clip-path: circle(20% at 50% 37%);
+    }
+    20%{
+        clip-path: circle(20% at 50% 45%);
+    }
+    50%{
+        clip-path: circle(21% at 50% 75%);
+    }
+    /*50%{
+        clip-path: circle(20% at 50% 100%);
+    }
+    60%{
+        clip-path: circle(20% at 50% 100%);
+    }*/
+    80%{
+        clip-path: circle(20% at 50% 45%);
+    }
+    90%{
+        clip-path: circle(20% at 50% 36%);
+    }
+    95%{
+        clip-path: circle(20% at 50% 33%);
+    }
+    100%{
+        clip-path: circle(20% at 50% 30%);
+    }
+
+}
